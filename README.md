@@ -39,4 +39,4 @@ This application is licensed by:
 
 ## Questions?
 
-Contact hkapk on GitHub or send an email inquiry to hankkapka@gmail.com.
+Contact: https://github/hkapk on GitHub or send an email inquiry to hankkapka@gmail.com
