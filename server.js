@@ -1,9 +1,9 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const notes  = require('./Develop/db/db.json');
+const notes  = require('./db/db.json');
 // Helper method for generating unique ids
-const uuid = require('./Develop/public/assets/uuid');
+const uuid = require('./assets/uuid');
 
 const PORT = process.env.PORT || 3001;
 
@@ -22,9 +22,15 @@ function findById(id, notesArray) {
     return result;
   }
 
-//route to GET / notes and return the notes.html file
+//route to GET / notes and return the index.html file
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
+  });
+//return the notes.html
+
+//route to GET / notes and return the notes.html file
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, 'notes.html'));
   });
 
 
@@ -33,7 +39,7 @@ app.get('/api/notes', (req, res) => {
     res.json(notes);
   });
 
-  // a route for a GET request that will return the content of our `db.json` file
+// a route for a GET request that will return the content of our `db.json` file
 
 //route to get note by id
   app.get('/api/notes/:id', (req, res) => {
