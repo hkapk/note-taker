@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const reviews = require('./Develop/db/db.json');
+const notes  = require('./Develop/db/notes.json');
 // Helper method for generating unique ids
 //const uuid = require('./helpers/uuid');
 
@@ -10,18 +10,22 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 
-//GET api/notes route to read the db.json file & return saved notes as JSON
-// Add a static route for index.html
-app.get('/', (req, res) => {
-    // `res.sendFile` is Express' way of sending a file
-    // `__dirname` is a variable that always returns the directory that your server is running in
-    res.sendFile(path.join(__dirname + 'index.html'));
-  });
-  
-  // a route for a GET request that will return the content of our `db.json` file
-  app.get('/json', (req, res) => {
+
+//GET route to return notes.json
+app.get('/api/notes', (req, res) => {
     res.json(notes);
   });
+  // a route for a GET request that will return the content of our `db.json` file
+
+
+  //   app.get('/api/notes/:id', (req, res) => {
+//     const result = findById(req.params.id, notes);
+//     if (result) {
+//       res.json(result);
+//     } else {
+//       res.send(404);
+//     }
+//   });
 
 //POST /api/notes receives new note to save on the request body and add to the db.json file
 
