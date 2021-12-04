@@ -35,7 +35,7 @@ install jest and then npm run test
 ## License:
 
 This application is licensed by:
-[![License](https://img.shields.io/badge/License--blue.svg)](https://opensource.org/licenses/)
+[![License](https://img.shields.io/badge/License--blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Questions?
 
