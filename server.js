@@ -39,7 +39,7 @@ app.get('/api/notes', (req, res) => {
     res.json(notes);
   });
 
-//use UUID to create a unique ID for each note
+//TODO use UUID to create a unique ID for each note
 
 //route to get note by id
   app.get('/api/notes/:id', (req, res) => {
@@ -47,34 +47,27 @@ app.get('/api/notes', (req, res) => {
       res.json(result);
   });
 
-//create a new note
-  //creates a new note
-function createNewNote(notes) {
-    newNotes = JSON.stringify(newNotes);
-    
-    fs.writeFileSync("./db/db.json", notes, function (err)
-    { if (err) {
-        return console.log(err);
-    }
-  });
-}
+
+//   //create a note
+//   function makeNote(note){
+//         note = JSON.stringify(note);
+
+//         fs.writeFileSync(path.join("./db/db.json", note, function(err){
+//             if (err) {
+//                 return console.log(err);
+//             } 
+//         });
+//     }
+
+
+
 //POST /api/notes receives new note to save on the request body and add to the db.json file
-app.post("api/notes",  (req, res) => {
-    if(notes.length == 0) {
-        req.body.id="0";
-    }else {
-    // set id based on what the next index of the array will be
-    req.body.id = JSON.stringify(JSON.parse(notes[notes.length - 1].id) + 1 );
-    }
-    notes.push(req.body);
+app.post("/api/notes", function (req, res) {
+      // req.body is where our incoming content will be
+  console.log(req.body);
+  res.json(req.body);
+});
 
-    //add note to notes
-    createNewNote(notes);
-    console.log(notes);
-
-    res.json(req.body);
-
-    });
 
 
 
