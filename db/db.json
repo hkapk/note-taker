@@ -1,1 +1,34 @@
-[]
+{
+  "notes": [
+    {
+      "title": "This is a new note",
+      "text": "testing, note 1-2-3",
+      "id": "0"
+    },
+    {
+      "title": "Note number 2",
+      "text": "this is a second note",
+      "id": "1"
+    },
+    {
+      "title": "Third note",
+      "text": "this is note #3",
+      "id": "2"
+    },
+    {
+      "title": "Test 1",
+      "text": "Testing 1-2-3 ",
+      "id": "3"
+    },
+    {
+      "title": "Test 2",
+      "text": "Testing 1-2-3-4",
+      "id": "4"
+    },
+    {
+      "title": "Test 2",
+      "text": "Testing 1-2-3-4-5",
+      "id": "5"
+    }
+  ]
+}
