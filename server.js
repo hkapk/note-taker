@@ -48,23 +48,29 @@ app.get('/api/notes', (req, res) => {
   });
 
 
-//   //create a note
-//   function makeNote(note){
-//         note = JSON.stringify(note);
+  //create a note
+  function makeNote(body, notesArray){
+    //console.log(body);    
+    const note = body;
+    notesArray.push(note);
+    fs.writeFileSync(
+        path.join(__dirname, './db/db.json'),
+        JSON.stringify({ notes: notesArray }, null, 2)
+      );
 
-//         fs.writeFileSync(path.join("./db/db.json", note, function(err){
-//             if (err) {
-//                 return console.log(err);
-//             } 
-//         });
-//     }
+        return body;
+    }
 
 
 
 //POST /api/notes receives new note to save on the request body and add to the db.json file
 app.post("/api/notes", function (req, res) {
       // req.body is where our incoming content will be
-  console.log(req.body);
+  //console.log(req.body);
+  req.body.id = notes.length.toString();
+
+  //add note to array
+  const note = makeNote(req.body, notes);
   res.json(req.body);
 });
 
